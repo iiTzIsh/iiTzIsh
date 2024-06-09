@@ -14,20 +14,16 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
-<h1 align="center">Hi 👋, I'm Ishara Madusanaka</h1>
-<h3 align="center">A passionate frontend developer from India</h3>
-
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=iitzish&label=Profile%20views&color=0e75b6&style=flat" alt="iitzish" /> </p>
-
-<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=iitzish" alt="iitzish" /></a> </p>
-
-<h3 align="left">Connect with me:</h3>
-<p align="left">
+<p align="center">
+  Hi, I'm Ishara Madusanka, Software Engineer from Sri Lanka
+  <br>
+  <br>
+  🔬 I'm currently studying Sri Lanka Institute of Information Technology, Department of Computer Engineering
+  <br>
+  💬 Ask me anything about from <a href="https://github.com/zumrudu-anka/zumrudu-anka/issues" title="Issues">Here</a>
+  <br>
+  📫 How to reach me: <a href="mailto: hpimadusanka@gmail.com">hpimadusanka@gmail.com</a>
 </p>
-
-<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=iitzish&show_icons=true&locale=en&layout=compact" alt="iitzish" /></p>
-
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=iitzish&show_icons=true&locale=en" alt="iitzish" /></p>
 
 
 ### 🔨 Languages and Tools:
