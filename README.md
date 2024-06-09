@@ -20,8 +20,7 @@ Here are some ideas to get you started:
   <br>
   🔬 I'm currently studying Sri Lanka Institute of Information Technology, Department of Computer Engineering
   <br>
-  💬 Ask me anything about from <a href="https://github.com/zumrudu-anka/zumrudu-anka/issues" title="Issues">Here</a>
-  <br>
+
   📫 How to reach me: <a href="mailto: hpimadusanka@gmail.com">hpimadusanka@gmail.com</a>
 </p>
 
