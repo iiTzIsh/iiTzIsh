@@ -1,5 +1,5 @@
 # 💫 About Me:
-Currently learning React<br>I'm an Undergraduate at SLIIT<br>ask me about web development<br>How to reach me hpimadusanka@gmail.com<br>Call me as ISH<br>
+Currently learning React<br>I'm an Undergraduate at SLIIT<br>Ask me about web development<br>How to reach me hpimadusanka@gmail.com<br>Call me as ISH<br>
 
 
 ## 🌐 Socials:
