@@ -35,15 +35,9 @@ const anmol = {
 
 ---
 <!--START_SECTION:waka-->
-**I'm an early 🐤** 
+~~I have nothing to show cuz snakes are eating them~~ :thought_balloon: 
+![github-contribution-grid-snake]![179353390-45ddac7d-f7e3-4c47-9eba-9137a45090f2](https://github.com/iiTzIsh/test/assets/118674919/ec285db8-2e39-495f-a634-0190c908b8cd)
 
-```text
-🌞 Morning    95 commits     ███████░░░░░░░░░░░░░░░░░░   30.55% 
-🌆 Daytime    78 commits     ██████░░░░░░░░░░░░░░░░░░░   25.08% 
-🌃 Evening    112 commits    █████████░░░░░░░░░░░░░░░░   36.01% 
-🌙 Night      26 commits     ██░░░░░░░░░░░░░░░░░░░░░░░   8.36%
-
-```
 
 
 📊 **This week I spent my time on** 
