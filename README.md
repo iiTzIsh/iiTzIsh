@@ -1,5 +1,6 @@
-<h2>I'm Ishara Madusanka! <img src="https://media.giphy.com/media/12oufCB0MyZ1Go/giphy.gif" width="50"></h2>
-<img align='right' src="https://user-images.githubusercontent.com/74038190/212284087-bbe7e430-757e-4901-90bf-4cd2ce3e1852.gif" width="150">
+<h1 align="center">
+  <img src="https://raw.githubusercontent.com/iiTzIsh/iiTzIsh/main/name.svg" alt="Marton Lederer" />
+</h1>
 <p><em>Udergraduate at SLIIT <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30"> 
 </em></p>
 
