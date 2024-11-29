@@ -54,8 +54,7 @@ I'm a **Undergraduate Student🎓 [@SLIIT](https://www.sliit.lk/)** majoring in 
 <code><img height="30" src="https://avatars1.githubusercontent.com/u/2918581?s=200&v=4"></code>
 <code><img height="30" src="https://avatars3.githubusercontent.com/u/18133?s=200&v=4"></code>
 <code><img height="30" src="https://avatars1.githubusercontent.com/u/5009934?s=200&v=4"></code>
-<code><img height="30" src="https://avatars0.githubusercontent.com/u/365630?s=88&v=4"></code>
-<code><img height="30" src="https://avatars.githubusercontent.com/u/15658638"></code>
+
 
 
 
