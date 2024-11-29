@@ -25,7 +25,7 @@ I'm a **Undergraduate Student🎓 [@SLIIT](https://www.sliit.lk/)** majoring in 
   - 🤖 Robotics
 - 📝 I write technical blogs and articles
 - 👯 I’m looking to collaborate on AI/ML projects
-- 💬 Ask me about Python, ML, MERNStack, php
+- 💬 Ask me about Python, ML, MERNStack
 - 📙 Check out my [Resume](https://linkedin.com/in/hpishara)
 - 🎉 Fun-Fact: I ❤️ Astrophysics and SpaceX🚀 and watch a lot Sci-Fi Movies🎬
 
