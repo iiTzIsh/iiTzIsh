@@ -4,7 +4,7 @@
 
 ### 📬 Find me at
 [![Github Badge](http://img.shields.io/badge/-Github-black?style=flat-square&logo=github&link=https://github.com/iiTzIsh)](https://github.com/iiTzIsh) 
-[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://linkedin.com/in/hpishara)](https://linkedin.com/in/hpishara)
+[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://linkedin.com/in/hpimadusanka)](https://linkedin.com/in/hpimadusanka)
 [![Gmail Badge](https://img.shields.io/badge/-Gmail-d14836?style=flat-square&logo=Gmail&logoColor=white&link=mailto:hpimadusanka@gmail.com)](mailto:hpimadusanka@gmail.com)
 
    
@@ -26,7 +26,7 @@ I'm a **Undergraduate Student🎓 [@SLIIT](https://www.sliit.lk/)** majoring in 
 - 📝 I write technical blogs and articles
 - 👯 I’m looking to collaborate on AI/ML projects
 - 💬 Ask me about Python, ML, MERNStack
-- 📙 Check out my [Resume](https://linkedin.com/in/hpishara)
+- 📙 Check out my [Resume](https://linkedin.com/in/hpimadusanka)
 - 🎉 Fun-Fact: I ❤️ Astrophysics and SpaceX🚀 and watch a lot Sci-Fi Movies🎬
 
   
