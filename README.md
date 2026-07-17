@@ -1,6 +1,9 @@
 <h1 align="center">
   <img src="https://raw.githubusercontent.com/iiTzIsh/iiTzIsh/main/name.svg" alt="Marton Lederer" />
 </h1>
+<div align="center">
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&duration=3000&pause=1000&color=2E9EF7&center=true&vCenter=true&width=600&lines=BSc+(Hons)+IT+-+Data+Science+%40+SLIIT;Building+ML%2FNLP+%26+Robotics+Side+Projects;Turning+Data+Into+Decisions" alt="Typing SVG" />
+</div>
 
 ### 📬 Find me at
 [![Github Badge](http://img.shields.io/badge/-Github-black?style=flat-square&logo=github&link=https://github.com/iiTzIsh)](https://github.com/iiTzIsh) 
