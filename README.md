@@ -17,7 +17,7 @@
 <a href="https://github.com/iiTzIsh"><img src="https://img.shields.io/badge/GitHub-0D1117?style=for-the-badge&logo=github&logoColor=2E9EF7" /></a>
 <a href="https://linkedin.com/in/hpimadusanka"><img src="https://img.shields.io/badge/Resume-0D1117?style=for-the-badge&logo=readdotcv&logoColor=2E9EF7" /></a>
 
-<br/><br/>
+<br/>
 
 <img src="./about.svg" alt="About me" width="100%" />
 
