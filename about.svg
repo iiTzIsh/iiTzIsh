@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="400" viewBox="0 0 860 400">
+  <defs>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2E9EF7"/>
+      <stop offset="100%" stop-color="#A371F7"/>
+    </linearGradient>
+    <style>
+      text { font-family: Consolas, 'Cascadia Code', 'Courier New', monospace; }
+      .title { fill: #8B949E; font-size: 13px; }
+      .prompt { fill: #3FB950; font-size: 14px; font-weight: 700; }
+      .cmd { fill: #E6EDF3; font-size: 14px; }
+      .path { fill: #2E9EF7; font-size: 14px; }
+      .out { fill: #E6EDF3; font-size: 15px; }
+      .muted { fill: #8B949E; font-size: 13px; }
+      .chip { font-size: 13px; text-anchor: middle; }
+
+      .l { opacity: 0; animation: in .5s ease-out forwards; }
+      @keyframes in { from { opacity: 0; transform: translateX(-8px); } to { opacity: 1; transform: translateX(0); } }
+      .d1{animation-delay:.3s}.d2{animation-delay:.8s}.d3{animation-delay:1.4s}.d4{animation-delay:1.9s}
+      .d5{animation-delay:2.5s}.d6{animation-delay:3.0s}.d7{animation-delay:3.6s}.d8{animation-delay:4.1s}
+      .d9{animation-delay:4.7s}.d10{animation-delay:5.2s}.d11{animation-delay:5.6s}
+
+      .border { stroke-dasharray: 260 2180; animation: run 7s linear infinite; }
+      @keyframes run { to { stroke-dashoffset: -2440; } }
+
+      .cursor { animation: blink 1s step-end infinite; }
+      @keyframes blink { 50% { opacity: 0; } }
+
+      .pulse { animation: pulse 1.6s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+      @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .35; transform: scale(1.6); } }
+
+      .edge { stroke: #2E9EF7; stroke-opacity: .25; stroke-width: 1.2; }
+      .flow { stroke: url(#glow); stroke-width: 1.6; stroke-dasharray: 6 90; animation: flow 2.4s linear infinite; }
+      @keyframes flow { to { stroke-dashoffset: -96; } }
+      .node { fill: #0D1117; stroke: #2E9EF7; stroke-width: 2; }
+      .n1{animation: nodeglow 2.4s ease-in-out infinite}
+      .n2{animation: nodeglow 2.4s ease-in-out .8s infinite}
+      .n3{animation: nodeglow 2.4s ease-in-out 1.6s infinite}
+      @keyframes nodeglow { 0%,100% { fill: #0D1117; } 50% { fill: #1E3A8A; } }
+    </style>
+  </defs>
+
+  <!-- Card -->
+  <rect x="10" y="10" width="840" height="380" rx="14" fill="#0D1117" stroke="#30363D" stroke-width="1.5"/>
+  <rect class="border" x="10" y="10" width="840" height="380" rx="14" fill="none" stroke="url(#glow)" stroke-width="2"/>
+
+  <!-- Title bar -->
+  <path d="M10 24 a14 14 0 0 1 14 -14 h812 a14 14 0 0 1 14 14 v26 h-840 z" fill="#161B22"/>
+  <line x1="10" y1="50" x2="850" y2="50" stroke="#30363D"/>
+  <circle cx="34" cy="30" r="6" fill="#FF5F56"/>
+  <circle cx="54" cy="30" r="6" fill="#FFBD2E"/>
+  <circle cx="74" cy="30" r="6" fill="#27C93F"/>
+  <text class="title" x="430" y="35" text-anchor="middle">ishara@sliit: ~/about</text>
+
+  <!-- whoami -->
+  <g class="l d1"><text x="40" y="86"><tspan class="prompt">➜ </tspan><tspan class="path">~ </tspan><tspan class="cmd">whoami</tspan></text></g>
+  <g class="l d2"><text class="out" x="40" y="112"><tspan font-weight="700">Ishara Madusanka</tspan><tspan class="muted"> — Data Science Undergraduate @ SLIIT</tspan></text></g>
+
+  <!-- focus -->
+  <g class="l d3"><text x="40" y="148"><tspan class="prompt">➜ </tspan><tspan class="path">~ </tspan><tspan class="cmd">cat focus.txt</tspan></text></g>
+  <g class="l d4">
+    <rect x="40" y="158" width="158" height="26" rx="13" fill="#2E9EF7" fill-opacity=".12" stroke="#2E9EF7" stroke-opacity=".5"/>
+    <text class="chip" x="119" y="176" fill="#79C0FF">Machine Learning</text>
+    <rect x="208" y="158" width="125" height="26" rx="13" fill="#2E9EF7" fill-opacity=".12" stroke="#2E9EF7" stroke-opacity=".5"/>
+    <text class="chip" x="270.5" y="176" fill="#79C0FF">Data Science</text>
+    <rect x="343" y="158" width="52" height="26" rx="13" fill="#2E9EF7" fill-opacity=".12" stroke="#2E9EF7" stroke-opacity=".5"/>
+    <text class="chip" x="369" y="176" fill="#79C0FF">NLP</text>
+  </g>
+
+  <!-- interests -->
+  <g class="l d5"><text x="40" y="216"><tspan class="prompt">➜ </tspan><tspan class="path">~ </tspan><tspan class="cmd">ls interests/</tspan></text></g>
+  <g class="l d6">
+    <rect x="40" y="226" width="200" height="26" rx="13" fill="#A371F7" fill-opacity=".12" stroke="#A371F7" stroke-opacity=".5"/>
+    <text class="chip" x="140" y="244" fill="#D2A8FF">Web &amp; App Development</text>
+    <rect x="250" y="226" width="92" height="26" rx="13" fill="#A371F7" fill-opacity=".12" stroke="#A371F7" stroke-opacity=".5"/>
+    <text class="chip" x="296" y="244" fill="#D2A8FF">Robotics</text>
+    <rect x="352" y="226" width="125" height="26" rx="13" fill="#A371F7" fill-opacity=".12" stroke="#A371F7" stroke-opacity=".5"/>
+    <text class="chip" x="414.5" y="244" fill="#D2A8FF">DIY Projects</text>
+  </g>
+
+  <!-- ask me -->
+  <g class="l d7"><text x="40" y="284"><tspan class="prompt">➜ </tspan><tspan class="path">~ </tspan><tspan class="cmd">ask-me --about</tspan></text></g>
+  <g class="l d8">
+    <rect x="40" y="294" width="76" height="26" rx="13" fill="#3FB950" fill-opacity=".12" stroke="#3FB950" stroke-opacity=".5"/>
+    <text class="chip" x="78" y="312" fill="#7EE787">Python</text>
+    <rect x="126" y="294" width="44" height="26" rx="13" fill="#3FB950" fill-opacity=".12" stroke="#3FB950" stroke-opacity=".5"/>
+    <text class="chip" x="148" y="312" fill="#7EE787">ML</text>
+    <rect x="180" y="294" width="110" height="26" rx="13" fill="#3FB950" fill-opacity=".12" stroke="#3FB950" stroke-opacity=".5"/>
+    <text class="chip" x="235" y="312" fill="#7EE787">MERN Stack</text>
+  </g>
+
+  <!-- status -->
+  <g class="l d9"><text x="40" y="352"><tspan class="prompt">➜ </tspan><tspan class="path">~ </tspan><tspan class="cmd">status</tspan></text></g>
+  <g class="l d10">
+    <circle class="pulse" cx="142" cy="347" r="5" fill="#3FB950"/>
+    <text class="out" x="156" y="352" font-size="14">Open to collaborating on AI/ML projects</text>
+  </g>
+  <g class="l d11"><rect class="cursor" x="40" y="364" width="9" height="16" fill="#2E9EF7"/></g>
+
+  <!-- Neural network graphic -->
+  <g transform="translate(560,70)">
+    <!-- edges -->
+    <g class="edge">
+      <line x1="30" y1="40" x2="130" y2="20"/><line x1="30" y1="40" x2="130" y2="100"/><line x1="30" y1="40" x2="130" y2="180"/>
+      <line x1="30" y1="140" x2="130" y2="20"/><line x1="30" y1="140" x2="130" y2="100"/><line x1="30" y1="140" x2="130" y2="180"/>
+      <line x1="30" y1="220" x2="130" y2="100"/><line x1="30" y1="220" x2="130" y2="180"/><line x1="30" y1="220" x2="130" y2="20"/>
+      <line x1="130" y1="20" x2="230" y2="80"/><line x1="130" y1="100" x2="230" y2="80"/><line x1="130" y1="180" x2="230" y2="80"/>
+      <line x1="130" y1="20" x2="230" y2="160"/><line x1="130" y1="100" x2="230" y2="160"/><line x1="130" y1="180" x2="230" y2="160"/>
+    </g>
+    <!-- flowing signals -->
+    <g class="flow">
+      <line x1="30" y1="40" x2="130" y2="100"/><line x1="30" y1="140" x2="130" y2="20"/><line x1="30" y1="220" x2="130" y2="180"/>
+      <line x1="130" y1="20" x2="230" y2="80"/><line x1="130" y1="100" x2="230" y2="160"/><line x1="130" y1="180" x2="230" y2="80"/>
+    </g>
+    <!-- nodes -->
+    <circle class="node n1" cx="30" cy="40" r="10"/><circle class="node n1" cx="30" cy="140" r="10"/><circle class="node n1" cx="30" cy="220" r="10"/>
+    <circle class="node n2" cx="130" cy="20" r="10"/><circle class="node n2" cx="130" cy="100" r="10"/><circle class="node n2" cx="130" cy="180" r="10"/>
+    <circle class="node n3" cx="230" cy="80" r="10"/><circle class="node n3" cx="230" cy="160" r="10"/>
+    <text class="muted" x="130" y="262" text-anchor="middle" font-size="12">Astrophysics · SpaceX · Sci-Fi</text>
+  </g>
+</svg>

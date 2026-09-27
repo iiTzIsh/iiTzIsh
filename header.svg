@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="260" viewBox="0 0 1000 260">
+<defs>
+  <linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#2E9EF7"/><stop offset="100%" stop-color="#A371F7"/></linearGradient>
+  <linearGradient id="name" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#E6EDF3"/><stop offset="50%" stop-color="#79C0FF"/><stop offset="100%" stop-color="#D2A8FF"/>
+    <animate attributeName="x1" values="0;-0.6;0" dur="8s" repeatCount="indefinite"/>
+    <animate attributeName="x2" values="1;0.4;1" dur="8s" repeatCount="indefinite"/>
+  </linearGradient>
+  <linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2E9EF7" stop-opacity=".25"/><stop offset="100%" stop-color="#2E9EF7" stop-opacity="0"/></linearGradient>
+  <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#30363D"/></pattern>
+  <filter id="blur" filterUnits="userSpaceOnUse" x="-200" y="-200" width="1400" height="660"><feGaussianBlur stdDeviation="40"/></filter>
+  <clipPath id="card"><rect x="10" y="10" width="980" height="240" rx="16"/></clipPath>
+  <clipPath id="type"><rect x="0" y="150" width="0" height="40"><animate attributeName="width" from="0" to="1000" begin="1.2s" dur="2.2s" fill="freeze" calcMode="spline" keySplines=".4 0 .2 1" keyTimes="0;1"/></rect></clipPath>
+  <style>
+    .t{font-family: 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif;}
+    .m{font-family: Consolas, 'Cascadia Code', 'Courier New', monospace;}
+    .line{stroke-dasharray:1100;stroke-dashoffset:1100;animation:draw 3s ease-out .4s forwards}
+    @keyframes draw{to{stroke-dashoffset:0}}
+    .ar{opacity:0;animation:fade 1s ease 2.6s forwards}
+    .fu{opacity:0;animation:up .8s ease forwards}
+    @keyframes up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes fade{to{opacity:1}}
+    .p{opacity:0;animation:fade .3s ease forwards}
+    .blob1{animation:drift 12s ease-in-out infinite alternate}
+    .blob2{animation:drift 14s ease-in-out infinite alternate-reverse}
+    @keyframes drift{from{transform:translate(0,0)}to{transform:translate(120px,30px)}}
+    .live{animation:pulse 1.6s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+    @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(2)}}
+  </style>
+</defs>
+<g clip-path="url(#card)">
+  <rect x="10" y="10" width="980" height="240" fill="#0D1117"/>
+  <rect x="10" y="10" width="980" height="240" fill="url(#dots)"/>
+  <circle class="blob1" cx="760" cy="60" r="120" fill="#1E3A8A" opacity=".55" filter="url(#blur)"/>
+  <circle class="blob2" cx="880" cy="220" r="110" fill="#6E40C9" opacity=".35" filter="url(#blur)"/>
+  <!-- data line -->
+  <polygon class="ar" points="700,212 734,198 768,204 802,176 836,184 870,150 904,158 932,116 955,84 955,250 700,250" fill="url(#area)"/>
+  <polyline class="line" points="700,212 734,198 768,204 802,176 836,184 870,150 904,158 932,116 955,84" fill="none" stroke="url(#g)" stroke-width="2.5" stroke-linejoin="round" opacity=".7"/>
+  <circle class="p" style="animation-delay:0.40s" cx="700" cy="212" r="3.5" fill="#0D1117" stroke="#79C0FF" stroke-width="2"/><circle class="p" style="animation-delay:0.67s" cx="734" cy="198" r="3.5" fill="#0D1117" stroke="#79C0FF" stroke-width="2"/><circle class="p" style="animation-delay:0.94s" cx="768" cy="204" r="3.5" fill="#0D1117" stroke="#79C0FF" stroke-width="2"/><circle class="p" style="animation-delay:1.21s" cx="802" cy="176" r="3.5" fill="#0D1117" stroke="#79C0FF" stroke-width="2"/><circle class="p" style="animation-delay:1.48s" cx="836" cy="184" r="3.5" fill="#0D1117" stroke="#79C0FF" stroke-width="2"/><circle class="p" style="animation-delay:1.75s" cx="870" cy="150" r="3.5" fill="#0D1117" stroke="#79C0FF" stroke-width="2"/><circle class="p" style="animation-delay:2.02s" cx="904" cy="158" r="3.5" fill="#0D1117" stroke="#79C0FF" stroke-width="2"/><circle class="p" style="animation-delay:2.29s" cx="932" cy="116" r="3.5" fill="#0D1117" stroke="#79C0FF" stroke-width="2"/><circle class="p" style="animation-delay:2.56s" cx="955" cy="84" r="3.5" fill="#0D1117" stroke="#79C0FF" stroke-width="2"/>
+  <circle class="live" cx="955" cy="84" r="4" fill="#A371F7"/>
+</g>
+<rect x="10" y="10" width="980" height="240" rx="16" fill="none" stroke="#30363D" stroke-width="1.5"/>
+
+<g class="fu" style="animation-delay:.1s">
+  <text class="m" x="60" y="72" font-size="14" fill="#2E9EF7" letter-spacing="3">HELLO, I'M</text>
+</g>
+<g class="fu" style="animation-delay:.35s">
+  <text class="t" x="56" y="128" font-size="58" font-weight="800" fill="url(#name)" letter-spacing="-1">Ishara Madusanka</text>
+</g>
+<g clip-path="url(#type)">
+  <text class="m" x="60" y="172" font-size="17" fill="#8B949E">Data Science Undergraduate @ SLIIT <tspan fill="#30363D">·</tspan> <tspan fill="#E6EDF3">Turning data into decisions</tspan></text>
+</g>
+<g class="fu" style="animation-delay:3.2s">
+  <rect x="60" y="196" width="118" height="26" rx="13" fill="#2E9EF7" fill-opacity=".12" stroke="#2E9EF7" stroke-opacity=".45"/>
+  <text class="t" x="119" y="214" font-size="12.5" fill="#79C0FF" text-anchor="middle" font-weight="600">ML / NLP</text>
+  <rect x="188" y="196" width="100" height="26" rx="13" fill="#A371F7" fill-opacity=".12" stroke="#A371F7" stroke-opacity=".45"/>
+  <text class="t" x="238" y="214" font-size="12.5" fill="#D2A8FF" text-anchor="middle" font-weight="600">Robotics</text>
+  <rect x="298" y="196" width="150" height="26" rx="13" fill="#3FB950" fill-opacity=".12" stroke="#3FB950" stroke-opacity=".45"/>
+  <text class="t" x="373" y="214" font-size="12.5" fill="#7EE787" text-anchor="middle" font-weight="600">Web Development</text>
+</g>
+</svg>
