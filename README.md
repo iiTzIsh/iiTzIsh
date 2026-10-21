@@ -19,7 +19,7 @@
 
 <br/>
 
-
+<img src="./about.svg" alt="About me" width="100%" />
 
 <br/><br/>
 
