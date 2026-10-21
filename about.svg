@@ -1,121 +1,205 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="860" height="400" viewBox="0 0 860 400">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="880" height="470" viewBox="0 0 880 470">
   <defs>
-    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#2E9EF7"/>
-      <stop offset="100%" stop-color="#A371F7"/>
-    </linearGradient>
     <style>
-      text { font-family: Consolas, 'Cascadia Code', 'Courier New', monospace; }
-      .title { fill: #8B949E; font-size: 13px; }
-      .prompt { fill: #3FB950; font-size: 14px; font-weight: 700; }
-      .cmd { fill: #E6EDF3; font-size: 14px; }
-      .path { fill: #2E9EF7; font-size: 14px; }
-      .out { fill: #E6EDF3; font-size: 15px; }
-      .muted { fill: #8B949E; font-size: 13px; }
-      .chip { font-size: 13px; text-anchor: middle; }
-
-      .l { opacity: 0; animation: in .5s ease-out forwards; }
-      @keyframes in { from { opacity: 0; transform: translateX(-8px); } to { opacity: 1; transform: translateX(0); } }
-      .d1{animation-delay:.3s}.d2{animation-delay:.8s}.d3{animation-delay:1.4s}.d4{animation-delay:1.9s}
-      .d5{animation-delay:2.5s}.d6{animation-delay:3.0s}.d7{animation-delay:3.6s}.d8{animation-delay:4.1s}
-      .d9{animation-delay:4.7s}.d10{animation-delay:5.2s}.d11{animation-delay:5.6s}
-
-      .border { stroke-dasharray: 260 2180; animation: run 7s linear infinite; }
-      @keyframes run { to { stroke-dashoffset: -2440; } }
-
-      .cursor { animation: blink 1s step-end infinite; }
-      @keyframes blink { 50% { opacity: 0; } }
-
-      .pulse { animation: pulse 1.6s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
-      @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .35; transform: scale(1.6); } }
-
-      .edge { stroke: #2E9EF7; stroke-opacity: .25; stroke-width: 1.2; }
-      .flow { stroke: url(#glow); stroke-width: 1.6; stroke-dasharray: 6 90; animation: flow 2.4s linear infinite; }
-      @keyframes flow { to { stroke-dashoffset: -96; } }
-      .node { fill: #0D1117; stroke: #2E9EF7; stroke-width: 2; }
-      .n1{animation: nodeglow 2.4s ease-in-out infinite}
-      .n2{animation: nodeglow 2.4s ease-in-out .8s infinite}
-      .n3{animation: nodeglow 2.4s ease-in-out 1.6s infinite}
-      @keyframes nodeglow { 0%,100% { fill: #0D1117; } 50% { fill: #1E3A8A; } }
+      .mono { font-family: 'JetBrains Mono','Fira Code',Consolas,'Courier New',monospace; }
+      .prompt { fill:#3fb950; font-size:15px; font-weight:700; }
+      .tilde  { fill:#58a6ff; font-size:15px; }
+      .cmd    { fill:#e6edf3; font-size:15px; }
+      .name   { fill:#ffffff; font-size:20px; font-weight:700; letter-spacing:0.5px; }
+      .pill   { font-size:13px; }
+      .dim    { fill:#7d8590; font-size:13px; }
+      .status { fill:#e6edf3; font-size:15px; }
     </style>
+
+    <!-- window border gradient -->
+    <linearGradient id="border" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2d6cdf" stop-opacity="0.9"/>
+      <stop offset="0.5" stop-color="#30363d"/>
+      <stop offset="1" stop-color="#a371f7" stop-opacity="0.7"/>
+    </linearGradient>
+
+    <!-- moving highlight on top edge -->
+    <linearGradient id="sweep" x1="0" x2="1">
+      <stop offset="0" stop-color="#58a6ff" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#58a6ff" stop-opacity="1"/>
+      <stop offset="1" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- name gradient -->
+    <linearGradient id="nameGrad" x1="0" x2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#79c0ff"/>
+    </linearGradient>
+
+    <!-- dotted grid behind network -->
+    <pattern id="dots" width="18" height="18" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1.1" fill="#21262d"/>
+    </pattern>
+
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="3.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <clipPath id="win"><rect x="10" y="15" width="860" height="440" rx="14"/></clipPath>
+
+    <!-- typing clips for each command -->
+    <clipPath id="t1"><rect x="78" y="78" height="24" width="0"><animate attributeName="width" values="0;9;18;27;36;45;56" calcMode="discrete" begin="0.3s" dur="0.45s" fill="freeze"/></rect></clipPath>
+    <clipPath id="t2"><rect x="78" y="153" height="24" width="0"><animate attributeName="width" values="0;18;36;54;72;90;108;130" calcMode="discrete" begin="1.4s" dur="0.55s" fill="freeze"/></rect></clipPath>
+    <clipPath id="t3"><rect x="78" y="228" height="24" width="0"><animate attributeName="width" values="0;18;36;54;72;90;108;130" calcMode="discrete" begin="2.5s" dur="0.55s" fill="freeze"/></rect></clipPath>
+    <clipPath id="t4"><rect x="78" y="303" height="24" width="0"><animate attributeName="width" values="0;18;36;54;72;90;108;130;150" calcMode="discrete" begin="3.6s" dur="0.6s" fill="freeze"/></rect></clipPath>
+    <clipPath id="t5"><rect x="78" y="388" height="24" width="0"><animate attributeName="width" values="0;9;18;27;36;45;56" calcMode="discrete" begin="4.7s" dur="0.45s" fill="freeze"/></rect></clipPath>
+
+    <!-- signal paths through the network -->
+    <path id="s1" d="M620 160 L710 210 L800 290"/>
+    <path id="s2" d="M620 350 L710 290 L800 210"/>
+    <path id="s3" d="M620 255 L710 130 L800 210"/>
+    <path id="s4" d="M620 255 L710 370 L800 290"/>
+    <path id="s5" d="M620 160 L710 290 L800 210"/>
   </defs>
 
-  <!-- Card -->
-  <rect x="10" y="10" width="840" height="380" rx="14" fill="#0D1117" stroke="#30363D" stroke-width="1.5"/>
-  <rect class="border" x="10" y="10" width="840" height="380" rx="14" fill="none" stroke="url(#glow)" stroke-width="2"/>
+  <!-- ===== window ===== -->
+  <rect x="10" y="15" width="860" height="440" rx="14" fill="#0d1117"/>
+  <g clip-path="url(#win)">
+    <rect x="560" y="55" width="310" height="400" fill="url(#dots)" opacity="0.9"/>
+    <!-- title bar -->
+    <rect x="10" y="15" width="860" height="40" fill="#161b22"/>
+    <line x1="10" y1="55" x2="870" y2="55" stroke="#21262d"/>
+    <!-- sweeping highlight -->
+    <rect x="-150" y="15" width="160" height="2" fill="url(#sweep)">
+      <animate attributeName="x" from="-150" to="880" dur="4s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  <rect x="10" y="15" width="860" height="440" rx="14" fill="none" stroke="url(#border)" stroke-width="1.2"/>
 
-  <!-- Title bar -->
-  <path d="M10 24 a14 14 0 0 1 14 -14 h812 a14 14 0 0 1 14 14 v26 h-840 z" fill="#161B22"/>
-  <line x1="10" y1="50" x2="850" y2="50" stroke="#30363D"/>
-  <circle cx="34" cy="30" r="6" fill="#FF5F56"/>
-  <circle cx="54" cy="30" r="6" fill="#FFBD2E"/>
-  <circle cx="74" cy="30" r="6" fill="#27C93F"/>
-  <text class="title" x="430" y="35" text-anchor="middle">ishara@sliit: ~/about</text>
-
-  <!-- whoami -->
-  <g class="l d1"><text x="40" y="86"><tspan class="prompt">➜ </tspan><tspan class="path">~ </tspan><tspan class="cmd">whoami</tspan></text></g>
-  <g class="l d2"><text class="out" x="40" y="112"><tspan font-weight="700">Ishara Madusanka</tspan><tspan class="muted"> — Data Science Undergraduate @ SLIIT</tspan></text></g>
-
-  <!-- focus -->
-  <g class="l d3"><text x="40" y="148"><tspan class="prompt">➜ </tspan><tspan class="path">~ </tspan><tspan class="cmd">cat focus.txt</tspan></text></g>
-  <g class="l d4">
-    <rect x="40" y="158" width="158" height="26" rx="13" fill="#2E9EF7" fill-opacity=".12" stroke="#2E9EF7" stroke-opacity=".5"/>
-    <text class="chip" x="119" y="176" fill="#79C0FF">Machine Learning</text>
-    <rect x="208" y="158" width="125" height="26" rx="13" fill="#2E9EF7" fill-opacity=".12" stroke="#2E9EF7" stroke-opacity=".5"/>
-    <text class="chip" x="270.5" y="176" fill="#79C0FF">Data Science</text>
-    <rect x="343" y="158" width="52" height="26" rx="13" fill="#2E9EF7" fill-opacity=".12" stroke="#2E9EF7" stroke-opacity=".5"/>
-    <text class="chip" x="369" y="176" fill="#79C0FF">NLP</text>
+  <circle cx="34" cy="35" r="6" fill="#ff5f57"/>
+  <circle cx="54" cy="35" r="6" fill="#febc2e"/>
+  <circle cx="74" cy="35" r="6" fill="#28c840"/>
+  <text x="440" y="40" text-anchor="middle" class="mono dim">~/about</text>
+  <g class="mono">
+    <circle cx="806" cy="35" r="3.5" fill="#3fb950">
+      <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="816" y="40" class="dim">zsh</text>
   </g>
 
-  <!-- interests -->
-  <g class="l d5"><text x="40" y="216"><tspan class="prompt">➜ </tspan><tspan class="path">~ </tspan><tspan class="cmd">ls interests/</tspan></text></g>
-  <g class="l d6">
-    <rect x="40" y="226" width="200" height="26" rx="13" fill="#A371F7" fill-opacity=".12" stroke="#A371F7" stroke-opacity=".5"/>
-    <text class="chip" x="140" y="244" fill="#D2A8FF">Web &amp; App Development</text>
-    <rect x="250" y="226" width="92" height="26" rx="13" fill="#A371F7" fill-opacity=".12" stroke="#A371F7" stroke-opacity=".5"/>
-    <text class="chip" x="296" y="244" fill="#D2A8FF">Robotics</text>
-    <rect x="352" y="226" width="125" height="26" rx="13" fill="#A371F7" fill-opacity=".12" stroke="#A371F7" stroke-opacity=".5"/>
-    <text class="chip" x="414.5" y="244" fill="#D2A8FF">DIY Projects</text>
+  <!-- ===== 1: whoami ===== -->
+  <g class="mono" opacity="0">
+    <set attributeName="opacity" to="1" begin="0.2s" fill="freeze"/>
+    <polyline points="41,84 47,89.5 41,95" fill="none" stroke="#3fb950" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="58" y="95" class="tilde">~</text>
+    <text x="78" y="95" class="cmd" clip-path="url(#t1)">whoami</text>
+  </g>
+  <g class="mono" opacity="0">
+    <animate attributeName="opacity" from="0" to="1" begin="0.9s" dur="0.4s" fill="freeze"/>
+    <text x="40" y="128" class="name" fill="url(#nameGrad)" style="fill:url(#nameGrad)">Ishara Madusanka</text>
   </g>
 
-  <!-- ask me -->
-  <g class="l d7"><text x="40" y="284"><tspan class="prompt">➜ </tspan><tspan class="path">~ </tspan><tspan class="cmd">ask-me --about</tspan></text></g>
-  <g class="l d8">
-    <rect x="40" y="294" width="76" height="26" rx="13" fill="#3FB950" fill-opacity=".12" stroke="#3FB950" stroke-opacity=".5"/>
-    <text class="chip" x="78" y="312" fill="#7EE787">Python</text>
-    <rect x="126" y="294" width="44" height="26" rx="13" fill="#3FB950" fill-opacity=".12" stroke="#3FB950" stroke-opacity=".5"/>
-    <text class="chip" x="148" y="312" fill="#7EE787">ML</text>
-    <rect x="180" y="294" width="110" height="26" rx="13" fill="#3FB950" fill-opacity=".12" stroke="#3FB950" stroke-opacity=".5"/>
-    <text class="chip" x="235" y="312" fill="#7EE787">MERN Stack</text>
+  <!-- ===== 2: focus ===== -->
+  <g class="mono" opacity="0">
+    <set attributeName="opacity" to="1" begin="1.3s" fill="freeze"/>
+    <polyline points="41,159 47,164.5 41,170" fill="none" stroke="#3fb950" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="58" y="170" class="tilde">~</text>
+    <text x="78" y="170" class="cmd" clip-path="url(#t2)">cat focus.txt</text>
+  </g>
+  <g class="mono pill" opacity="0">
+    <animate attributeName="opacity" from="0" to="1" begin="2.0s" dur="0.4s" fill="freeze"/>
+    <rect x="40"  y="183" width="148" height="28" rx="14" fill="#0b2a55" fill-opacity="0.55" stroke="#1f6feb" stroke-opacity="0.7"/>
+    <text x="114" y="202" text-anchor="middle" fill="#79c0ff">Machine Learning</text>
+    <rect x="198" y="183" width="117" height="28" rx="14" fill="#0b2a55" fill-opacity="0.55" stroke="#1f6feb" stroke-opacity="0.7"/>
+    <text x="256.5" y="202" text-anchor="middle" fill="#79c0ff">Data Science</text>
+    <rect x="325" y="183" width="52" height="28" rx="14" fill="#0b2a55" fill-opacity="0.55" stroke="#1f6feb" stroke-opacity="0.7"/>
+    <text x="351" y="202" text-anchor="middle" fill="#79c0ff">NLP</text>
   </g>
 
-  <!-- status -->
-  <g class="l d9"><text x="40" y="352"><tspan class="prompt">➜ </tspan><tspan class="path">~ </tspan><tspan class="cmd">status</tspan></text></g>
-  <g class="l d10">
-    <circle class="pulse" cx="142" cy="347" r="5" fill="#3FB950"/>
-    <text class="out" x="156" y="352" font-size="14">Open to collaborating on AI/ML projects</text>
+  <!-- ===== 3: interests ===== -->
+  <g class="mono" opacity="0">
+    <set attributeName="opacity" to="1" begin="2.4s" fill="freeze"/>
+    <polyline points="41,234 47,239.5 41,245" fill="none" stroke="#3fb950" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="58" y="245" class="tilde">~</text>
+    <text x="78" y="245" class="cmd" clip-path="url(#t3)">ls interests/</text>
   </g>
-  <g class="l d11"><rect class="cursor" x="40" y="364" width="9" height="16" fill="#2E9EF7"/></g>
+  <g class="mono pill" opacity="0">
+    <animate attributeName="opacity" from="0" to="1" begin="3.1s" dur="0.4s" fill="freeze"/>
+    <rect x="40"  y="258" width="186" height="28" rx="14" fill="#2a1a4a" fill-opacity="0.55" stroke="#a371f7" stroke-opacity="0.6"/>
+    <text x="133" y="277" text-anchor="middle" fill="#d2a8ff">Web &amp; App Development</text>
+    <rect x="236" y="258" width="87" height="28" rx="14" fill="#2a1a4a" fill-opacity="0.55" stroke="#a371f7" stroke-opacity="0.6"/>
+    <text x="279.5" y="277" text-anchor="middle" fill="#d2a8ff">Robotics</text>
+    <rect x="333" y="258" width="117" height="28" rx="14" fill="#2a1a4a" fill-opacity="0.55" stroke="#a371f7" stroke-opacity="0.6"/>
+    <text x="391.5" y="277" text-anchor="middle" fill="#d2a8ff">DIY Projects</text>
+  </g>
 
-  <!-- Neural network graphic -->
-  <g transform="translate(560,70)">
-    <!-- edges -->
-    <g class="edge">
-      <line x1="30" y1="40" x2="130" y2="20"/><line x1="30" y1="40" x2="130" y2="100"/><line x1="30" y1="40" x2="130" y2="180"/>
-      <line x1="30" y1="140" x2="130" y2="20"/><line x1="30" y1="140" x2="130" y2="100"/><line x1="30" y1="140" x2="130" y2="180"/>
-      <line x1="30" y1="220" x2="130" y2="100"/><line x1="30" y1="220" x2="130" y2="180"/><line x1="30" y1="220" x2="130" y2="20"/>
-      <line x1="130" y1="20" x2="230" y2="80"/><line x1="130" y1="100" x2="230" y2="80"/><line x1="130" y1="180" x2="230" y2="80"/>
-      <line x1="130" y1="20" x2="230" y2="160"/><line x1="130" y1="100" x2="230" y2="160"/><line x1="130" y1="180" x2="230" y2="160"/>
-    </g>
-    <!-- flowing signals -->
-    <g class="flow">
-      <line x1="30" y1="40" x2="130" y2="100"/><line x1="30" y1="140" x2="130" y2="20"/><line x1="30" y1="220" x2="130" y2="180"/>
-      <line x1="130" y1="20" x2="230" y2="80"/><line x1="130" y1="100" x2="230" y2="160"/><line x1="130" y1="180" x2="230" y2="80"/>
-    </g>
-    <!-- nodes -->
-    <circle class="node n1" cx="30" cy="40" r="10"/><circle class="node n1" cx="30" cy="140" r="10"/><circle class="node n1" cx="30" cy="220" r="10"/>
-    <circle class="node n2" cx="130" cy="20" r="10"/><circle class="node n2" cx="130" cy="100" r="10"/><circle class="node n2" cx="130" cy="180" r="10"/>
-    <circle class="node n3" cx="230" cy="80" r="10"/><circle class="node n3" cx="230" cy="160" r="10"/>
-    <text class="muted" x="130" y="262" text-anchor="middle" font-size="12">Astrophysics · SpaceX · Sci-Fi</text>
+  <!-- ===== 4: ask-me ===== -->
+  <g class="mono" opacity="0">
+    <set attributeName="opacity" to="1" begin="3.5s" fill="freeze"/>
+    <polyline points="41,309 47,314.5 41,320" fill="none" stroke="#3fb950" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="58" y="320" class="tilde">~</text>
+    <text x="78" y="320" class="cmd" clip-path="url(#t4)">ask-me --about</text>
+  </g>
+  <g class="mono pill" opacity="0">
+    <animate attributeName="opacity" from="0" to="1" begin="4.3s" dur="0.4s" fill="freeze"/>
+    <rect x="40"  y="333" width="72" height="28" rx="14" fill="#0f2e1a" fill-opacity="0.6" stroke="#3fb950" stroke-opacity="0.6"/>
+    <text x="76" y="352" text-anchor="middle" fill="#7ee787">Python</text>
+    <rect x="122" y="333" width="42" height="28" rx="14" fill="#0f2e1a" fill-opacity="0.6" stroke="#3fb950" stroke-opacity="0.6"/>
+    <text x="143" y="352" text-anchor="middle" fill="#7ee787">ML</text>
+    <rect x="174" y="333" width="102" height="28" rx="14" fill="#0f2e1a" fill-opacity="0.6" stroke="#3fb950" stroke-opacity="0.6"/>
+    <text x="225" y="352" text-anchor="middle" fill="#7ee787">MERN Stack</text>
+  </g>
+
+  <!-- ===== 5: status ===== -->
+  <g class="mono" opacity="0">
+    <set attributeName="opacity" to="1" begin="4.6s" fill="freeze"/>
+    <polyline points="41,394 47,399.5 41,405" fill="none" stroke="#3fb950" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="58" y="405" class="tilde">~</text>
+    <text x="78" y="405" class="cmd" clip-path="url(#t5)">status</text>
+  </g>
+  <g class="mono" opacity="0">
+    <animate attributeName="opacity" from="0" to="1" begin="5.3s" dur="0.4s" fill="freeze"/>
+    <circle cx="152" cy="400" r="5" fill="#3fb950"/>
+    <circle cx="152" cy="400" r="5" fill="none" stroke="#3fb950">
+      <animate attributeName="r" values="5;11" dur="1.6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0" dur="1.6s" repeatCount="indefinite"/>
+    </circle>
+    <text x="166" y="405" class="status">Open to collaborating on AI/ML projects<tspan dx="6" fill="#58a6ff" font-weight="700">_<animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="1s" repeatCount="indefinite"/></tspan></text>
+  </g>
+
+  <!-- ===== neural network ===== -->
+  <g stroke="#1f6feb" stroke-opacity="0.28" stroke-width="1.1">
+    <!-- input -> hidden -->
+    <line x1="620" y1="160" x2="710" y2="130"/><line x1="620" y1="160" x2="710" y2="210"/>
+    <line x1="620" y1="160" x2="710" y2="290"/><line x1="620" y1="160" x2="710" y2="370"/>
+    <line x1="620" y1="255" x2="710" y2="130"/><line x1="620" y1="255" x2="710" y2="210"/>
+    <line x1="620" y1="255" x2="710" y2="290"/><line x1="620" y1="255" x2="710" y2="370"/>
+    <line x1="620" y1="350" x2="710" y2="130"/><line x1="620" y1="350" x2="710" y2="210"/>
+    <line x1="620" y1="350" x2="710" y2="290"/><line x1="620" y1="350" x2="710" y2="370"/>
+    <!-- hidden -> output -->
+    <line x1="710" y1="130" x2="800" y2="210"/><line x1="710" y1="130" x2="800" y2="290"/>
+    <line x1="710" y1="210" x2="800" y2="210"/><line x1="710" y1="210" x2="800" y2="290"/>
+    <line x1="710" y1="290" x2="800" y2="210"/><line x1="710" y1="290" x2="800" y2="290"/>
+    <line x1="710" y1="370" x2="800" y2="210"/><line x1="710" y1="370" x2="800" y2="290"/>
+  </g>
+
+  <!-- travelling signals -->
+  <g fill="#79c0ff" filter="url(#glow)">
+    <circle r="3"><animateMotion dur="2.4s" begin="0s"   repeatCount="indefinite"><mpath xlink:href="#s1"/></animateMotion></circle>
+    <circle r="3"><animateMotion dur="2.4s" begin="0.5s" repeatCount="indefinite"><mpath xlink:href="#s2"/></animateMotion></circle>
+    <circle r="3"><animateMotion dur="2.4s" begin="1.0s" repeatCount="indefinite"><mpath xlink:href="#s3"/></animateMotion></circle>
+    <circle r="3"><animateMotion dur="2.4s" begin="1.5s" repeatCount="indefinite"><mpath xlink:href="#s4"/></animateMotion></circle>
+    <circle r="3" fill="#d2a8ff"><animateMotion dur="2.4s" begin="2.0s" repeatCount="indefinite"><mpath xlink:href="#s5"/></animateMotion></circle>
+  </g>
+
+  <!-- nodes -->
+  <g stroke="#58a6ff" stroke-width="2" fill="#0d1f3c">
+    <circle cx="620" cy="160" r="11"/><circle cx="620" cy="255" r="11"/><circle cx="620" cy="350" r="11"/>
+    <circle cx="710" cy="130" r="11"/><circle cx="710" cy="210" r="11"/>
+    <circle cx="710" cy="290" r="11"/><circle cx="710" cy="370" r="11"/>
+  </g>
+  <g stroke="#58a6ff" stroke-width="2" filter="url(#glow)">
+    <circle cx="800" cy="210" r="12" fill="#1f3b73">
+      <animate attributeName="fill" values="#1f3b73;#2d6cdf;#1f3b73" dur="2.4s" begin="1.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="800" cy="290" r="12" fill="#1f3b73">
+      <animate attributeName="fill" values="#1f3b73;#2d6cdf;#1f3b73" dur="2.4s" begin="0s" repeatCount="indefinite"/>
+    </circle>
   </g>
 </svg>
